@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BRT Soluções • Conserto Certo — Elétrica, Hidráulica, Telhados e Manutenção Predial. Grande Curitiba e Região. Atendimento rápido, garantia e preço justo.">
+    <meta name="description" content="BRT Soluções • Conserto Certo — Elétrica, Hidráulica, Telhados e Manutenção Predial. Grande Curitiba. Atendimento rápido, garantia e preço justo. Ligue: (41) 99118-7943">
     <meta name="theme-color" content="#1565C0">
     
     <!-- Ícone do site -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%231565C0'/%3E%3Cpath d='M50 18L32 32v20c0 6 3 11 8 14l10 6 10-6c5-3 8-8 8-14V32L50 18zm0 38c-3 0-6-1-8-3l-2-2V38l10-8 10 8v13l-2 2c-2 2-5 3-8 3z' fill='white'/%3E%3Cpath d='M72 78L50 65l-22 13v-8l22-13 22 13v8z' fill='%23E65100'/%3E%3C/svg%3E">
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%231565C0'/%3E%3Cpath d='M50 18L32 32v20c0 6 3 11 8 14l10 6 10-6c5-3 8-8 8-14V32L50 18zm0 38c-3 0-6-1-8-3l-2-2V38l10-8 10 8v13l-2 2c-2 2-5 3-8 3z' fill='white'/%3E%3Cpath d='M72 78L50 65l-22 13v-8l22-13 22 13v8z' fill='%23E65100'/%3E%3C/svg%3E">
     
-    <!-- Título da aba -->
+    <!-- ✅ TÍTULO DA ABA CORRIGIDO — SEM NOME EXTRA -->
     <title>BRT Soluções • Conserto Certo</title>
     
     <!-- Firebase -->
@@ -22,7 +22,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; }
         :root {
             --primario: #1565C0;
-            --primario-claro: #42A5F5;
+            --primario-escuro: #0D47A1;
             --secundario: #E65100;
             --secundario-claro: #FF9100;
             --sucesso: #2E7D32;
@@ -41,15 +41,15 @@
         
         /* Barra Topo - Contato Rápido */
         .barra-topo {
-            background: #0D47A1;
+            background: var(--primario-escuro);
             color: white;
             font-size: 0.85rem;
-            padding: 0.5rem 1.2rem;
+            padding: 0.5rem 1rem;
             text-align: center;
         }
         .barra-topo a { color: var(--secundario-claro); font-weight: 600; }
         
-        /* Barra de Navegação */
+        /* Navegação */
         nav {
             background: #fff;
             position: sticky;
@@ -61,21 +61,21 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.2rem;
+            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            height: 64px;
         }
         .logo {
             font-size: 1.15rem;
             font-weight: 700;
-            color: var(--primario);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
         }
-        .logo span { color: var(--secundario); }
+        .logo-azul { color: var(--primario); }
+        .logo-laranja { color: var(--secundario); }
         .menu-btn {
             display: none;
             background: none;
@@ -86,7 +86,7 @@
         }
         .nav-links {
             display: flex;
-            gap: 1.2rem;
+            gap: 1rem;
             list-style: none;
             font-weight: 500;
             font-size: 0.9rem;
@@ -147,22 +147,18 @@
         
         /* Início / Hero */
         #inicio {
-            background: linear-gradient(135deg, var(--primario) 0%, #0D47A1 100%);
+            background: linear-gradient(135deg, var(--primario) 0%, var(--primario-escuro) 100%);
             min-height: 90vh;
             display: flex;
             align-items: center;
             margin-top: 0;
             color: white;
-            position: relative;
-            overflow: hidden;
         }
         .hero-conteudo {
             max-width: 650px;
             margin: 0 auto;
             text-align: center;
             animation: surgir 0.8s ease-out;
-            position: relative;
-            z-index: 2;
         }
         @keyframes surgir {
             from { opacity: 0; transform: translateY(25px); }
@@ -170,7 +166,7 @@
         }
         .hero-conteudo h1 {
             font-size: 2.2rem;
-            line-height: 1.2;
+            line-height: 1.25;
             margin-bottom: 1.5rem;
         }
         .hero-conteudo h1 span { color: var(--secundario-claro); }
@@ -204,45 +200,24 @@
         .btn-branco { background: white; color: var(--primario); }
         .btn-branco:hover { background: #f8f9fa; }
         
-        /* Selos de Confiança */
+        /* Selos / Diferenciais */
         .selos {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
         }
         .selo {
-            text-align: center;
-            background: rgba(255,255,255,0.1);
-            padding: 1rem 1.5rem;
+            background: rgba(255,255,255,0.12);
+            padding: 1.2rem;
             border-radius: 12px;
             backdrop-filter: blur(5px);
-        }
-        .selo-icone { font-size: 1.8rem; margin-bottom: 0.3rem; }
-        
-        /* Diferenciais */
-        .diferenciais {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .dif-card {
-            background: white;
-            padding: 1.8rem;
-            border-radius: 16px;
-            box-shadow: var(--sombra);
-            text-align: center;
             transition: 0.3s;
-            border-top: 3px solid transparent;
         }
-        .dif-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: var(--sombra-forte);
-            border-top-color: var(--secundario);
-        }
-        .dif-icone { font-size: 2.2rem; margin-bottom: 0.8rem; }
+        .selo:hover { transform: translateY(-5px); background: rgba(255,255,255,0.2); }
+        .selo-icone { font-size: 2rem; margin-bottom: 0.4rem; }
+        .selo-nome { font-weight: 600; font-size: 1rem; }
         
         /* Serviços */
         .servicos-grid {
@@ -279,24 +254,6 @@
         .garantia-box h3 { color: var(--sucesso); font-size: 1.5rem; margin-bottom: 0.8rem; }
         .garantia-destaque { font-size: 1.2rem; font-weight: 700; color: var(--sucesso); margin-top: 0.5rem; }
         
-        /* Área de Atendimento */
-        .regioes-lista {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-        .regiao-tag {
-            background: white;
-            padding: 0.8rem 1.4rem;
-            border-radius: 50px;
-            box-shadow: var(--sombra);
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        .regiao-tag:hover { transform: scale(1.05); background: var(--primario); color: white; }
-        
         /* Por que nos escolher */
         .porque-grid {
             display: grid;
@@ -321,6 +278,24 @@
             font-weight: 700;
             flex-shrink: 0;
         }
+        
+        /* Área de Atendimento */
+        .regioes-lista {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .regiao-tag {
+            background: white;
+            padding: 0.8rem 1.4rem;
+            border-radius: 50px;
+            box-shadow: var(--sombra);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .regiao-tag:hover { transform: scale(1.05); background: var(--primario); color: white; }
         
         /* Formulários */
         .form-container {
@@ -360,7 +335,7 @@
             transition: 0.3s;
         }
         button[type="submit"]:hover {
-            background: linear-gradient(90deg, #0D47A1, var(--primario));
+            background: linear-gradient(90deg, var(--primario-escuro), var(--primario));
             transform: translateY(-2px);
         }
         button[type="submit"]:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
@@ -496,31 +471,32 @@
             .btn-nav { margin-left: 0; margin-top: 0.5rem; text-align: center; width: 100%; }
             .hero-conteudo h1 { font-size: 1.7rem; }
             .form-container { padding: 1.5rem; }
-            .selos { gap: 1rem; }
-            .selo { padding: 0.8rem 1rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- Barra de Contato Rápido -->
+<!-- Barra de Contato Rápido ✅ NÚMERO ATUALIZADO -->
 <div class="barra-topo">
-    📞 Atendimento: (41) 99999-9999 | ✉️ contato@brtsolucoes.com.br | ⏰ Seg a Sex: 8h às 18h
+    📞 Atendimento: <a href="tel:+5541991187943">(41) 99118-7943</a> | ⏰ Seg a Sex: 8h às 18h • Sáb: 8h às 13h
 </div>
 
-<!-- WhatsApp Fixo -->
-<a href="https://wa.me/5541999999999" target="_blank" class="whatsapp-fixo" aria-label="Chamar no WhatsApp">💬</a>
+<!-- WhatsApp Fixo ✅ NÚMERO ATUALIZADO -->
+<a href="https://wa.me/5541991187943" target="_blank" class="whatsapp-fixo" aria-label="Chamar no WhatsApp">💬</a>
 
-<!-- Barra de Navegação -->
+<!-- Navegação -->
 <nav>
     <div class="nav-container">
-        <a href="#inicio" class="logo">BRT Soluções <span>• Conserto Certo</span></a>
+        <a href="#inicio" class="logo">
+            <span class="logo-azul">BRT Soluções</span>
+            <span class="logo-laranja">• Conserto Certo</span>
+        </a>
         <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
         <ul class="nav-links" id="menuNav">
             <li><a href="#inicio" class="link-nav">Início</a></li>
             <li><a href="#servicos" class="link-nav">Serviços</a></li>
-            <li><a href="#diferencial" class="link-nav">Nosso Diferencial</a></li>
-            <li><a href="#atendimento" class="link-nav">Área de Atendimento</a></li>
+            <li><a href="#diferencial" class="link-nav">Diferencial</a></li>
+            <li><a href="#atendimento" class="link-nav">Atendimento</a></li>
             <li><a href="#solicitar" class="link-nav">Solicitar</a></li>
             <li><a href="#sobre" class="link-nav">Sobre</a></li>
             <li><a href="#entrar" class="link-nav">Entrar</a></li>
@@ -536,25 +512,25 @@
         <p>Elétrica • Hidráulica • Telhados • Manutenção Predial<br>Atendimento na Grande Curitiba — rápido, seguro e com garantia.</p>
         <div class="hero-botoes">
             <a href="#solicitar" class="btn btn-principal">📋 Solicitar Atendimento</a>
-            <a href="https://wa.me/5541999999999" target="_blank" class="btn btn-branco">💬 Chamar no WhatsApp</a>
+            <a href="https://wa.me/5541991187943" target="_blank" class="btn btn-branco">💬 Chamar no WhatsApp</a>
         </div>
         
         <div class="selos">
             <div class="selo">
                 <div class="selo-icone">🛡️</div>
-                <strong>Garantia</strong>
+                <div class="selo-nome">Garantia</div>
             </div>
             <div class="selo">
                 <div class="selo-icone">✅</div>
-                <strong>Qualidade</strong>
+                <div class="selo-nome">Qualidade</div>
             </div>
             <div class="selo">
                 <div class="selo-icone">⚡</div>
-                <strong>Agilidade</strong>
+                <div class="selo-nome">Agilidade</div>
             </div>
             <div class="selo">
                 <div class="selo-icone">💰</div>
-                <strong>Preço Justo</strong>
+                <div class="selo-nome">Preço Justo</div>
             </div>
         </div>
     </div>
@@ -565,4 +541,428 @@
     <div class="secao-titulo">
         <h2>Nossos Serviços</h2>
         <div class="linha"></div>
-        <p class="subtitulo">Soluções completas para sua casa ou empre
+        <p class="subtitulo">Soluções completas para sua casa ou empresa</p>
+    </div>
+    <div class="servicos-grid">
+        <div class="servico-card">
+            <div class="servico-icone">⚡</div>
+            <h3>Serviços Elétricos</h3>
+            <p>Troca de chuveiros, tomadas, fiação, instalações e reparos em geral.</p>
+            <ul class="servico-detalhes">
+                <li>✓ Instalação e reparo</li>
+                <li>✓ Troca de equipamentos</li>
+                <li>✓ Adequação de sistemas</li>
+            </ul>
+        </div>
+        <div class="servico-card">
+            <div class="servico-icone">💧</div>
+            <h3>Serviços Hidráulicos</h3>
+            <p>Vazamentos, torneiras, registros, caixas d'água e sistemas de esgoto.</p>
+            <ul class="servico-detalhes">
+                <li>✓ Reparo de vazamentos</li>
+                <li>✓ Instalação de torneiras e registros</li>
+                <li>✓ Limpeza e manutenção</li>
+            </ul>
+        </div>
+        <div class="servico-card">
+            <div class="servico-icone">🏠</div>
+            <h3>Telhados e Coberturas</h3>
+            <p>Reparo e construção de telhados novos. Impermeabilização e calhas.</p>
+            <ul class="servico-detalhes">
+                <li>✓ Construção de telhados</li>
+                <li>✓ Reparo e manutenção</li>
+                <li>✓ Impermeabilização</li>
+            </ul>
+        </div>
+        <div class="servico-card">
+            <div class="servico-icone">🔧</div>
+            <h3>Manutenção Predial</h3>
+            <p>Conservação e reformas para residências e comércios.</p>
+            <ul class="servico-detalhes">
+                <li>✓ Manutenção preventiva</li>
+                <li>✓ Pequenas reformas</li>
+                <li>✓ Soluções rápidas</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="garantia-box">
+        <h3>🛡️ Garantia de Qualidade em Todos os Serviços</h3>
+        <p>Trabalhamos com transparência, materiais de qualidade e compromisso com sua satisfação.</p>
+        <p class="garantia-destaque">Sua tranquilidade é nossa prioridade! ✅</p>
+    </div>
+</section>
+
+<!-- Nosso Diferencial -->
+<section id="diferencial">
+    <div class="secao-titulo">
+        <h2>Por que escolher a BRT Soluções?</h2>
+        <div class="linha"></div>
+        <p class="subtitulo">Compromisso real com você</p>
+    </div>
+    <div class="porque-grid">
+        <div class="porque-item">
+            <div class="porque-num">1</div>
+            <div>
+                <h4>Atendimento Rápido</h4>
+                <p style="color: var(--texto-claro); font-size: 0.95rem;">Vamos até você com agilidade, sem enrolação.</p>
+            </div>
+        </div>
+        <div class="porque-item">
+            <div class="porque-num">2</div>
+            <div>
+                <h4>Preço Justo e Transparente</h4>
+                <p style="color: var(--texto-claro); font-size: 0.95rem;">Valor combinado, sem surpresas na hora de pagar.</p>
+            </div>
+        </div>
+        <div class="porque-item">
+            <div class="porque-num">3</div>
+            <div>
+                <h4>Serviço com Garantia</h4>
+                <p style="color: var(--texto-claro); font-size: 0.95rem;">Ficou com defeito? Voltamos sem custo adicional.</p>
+            </div>
+        </div>
+        <div class="porque-item">
+            <div class="porque-num">4</div>
+            <div>
+                <h4>Profissional Experiente</h4>
+                <p style="color: var(--texto-claro); font-size: 0.95rem;">Técnico qualificado, cuidadoso com sua casa.</p>
+            </div>
+        </div>
+        <div class="porque-item">
+            <div class="porque-num">5</div>
+            <div>
+                <h4>Respeito ao Cliente</h4>
+                <p style="color: var(--texto-claro); font-size: 0.95rem;">Chegamos no horário combinado e limpamos tudo depois.</p>
+            </div>
+        </div>
+        <div class="porque-item">
+            <div class="porque-num">6</div>
+            <div>
+                <h4>Atendimento Local</h4>
+                <p style="color: var(--texto-claro); font-size: 0.95rem;">Conhecemos a região e estamos pertinho de você.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Área de Atendimento -->
+<section id="atendimento">
+    <div class="secao-titulo">
+        <h2>Área de Atendimento</h2>
+        <div class="linha"></div>
+        <p class="subtitulo">Atendemos a Grande Curitiba e Região Metropolitana</p>
+    </div>
+    <div class="regioes-lista">
+        <span class="regiao-tag">📍 Curitiba</span>
+        <span class="regiao-tag">📍 São José dos Pinhais</span>
+        <span class="regiao-tag">📍 Pinhais</span>
+        <span class="regiao-tag">📍 Colombo</span>
+        <span class="regiao-tag">📍 Araucária</span>
+        <span class="regiao-tag">📍 Fazenda Rio Grande</span>
+    </div>
+    <p style="text-align:center; margin-top: 2rem; color: var(--texto-claro);">Não encontrou sua cidade? <a href="https://wa.me/5541991187943" target="_blank" style="color: var(--primario); font-weight: 600;">Chama no WhatsApp</a> que verificamos! 💬</p>
+</section>
+
+<!-- Solicitar Atendimento -->
+<section id="solicitar">
+    <div class="secao-titulo">
+        <h2>Solicitar Atendimento</h2>
+        <div class="linha"></div>
+        <p class="subtitulo">Preencha o formulário e entraremos em contato em breve</p>
+    </div>
+    <div class="form-container">
+        <form id="formCliente">
+            <div class="form-grupo">
+                <label for="nome">Nome Completo *</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+            </div>
+            <div class="form-grupo">
+                <label for="telefone">WhatsApp com DDD *</label>
+                <input type="tel" id="telefone" placeholder="(41) 9XXXX-XXXX" required>
+            </div>
+            <div class="form-grupo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seuemail@exemplo.com">
+            </div>
+            <div class="form-grupo">
+                <label for="endereco">Endereço Completo *</label>
+                <input type="text" id="endereco" placeholder="Rua, Bairro, Cidade - PR" required>
+            </div>
+            <div class="form-grupo">
+                <label for="servico">Tipo de Serviço *</label>
+                <select id="servico" required>
+                    <option value="">Selecione...</option>
+                    <option value="eletrico">⚡ Elétrico</option>
+                    <option value="hidraulico">💧 Hidráulico</option>
+                    <option value="telhado">🏠 Telhado / Cobertura</option>
+                    <option value="manutencao">🔧 Manutenção Predial / Geral</option>
+                    <option value="outro">📝 Outro</option>
+                </select>
+            </div>
+            <div class="form-grupo">
+                <label for="descricao">Descrição do Problema</label>
+                <textarea id="descricao" rows="4" placeholder="Descreva o que precisa..."></textarea>
+            </div>
+            <div class="form-grupo">
+                <label for="pagamento">Forma de Pagamento Preferida</label>
+                <select id="pagamento">
+                    <option value="">Escolha...</option>
+                    <option value="dinheiro">Dinheiro</option>
+                    <option value="pix">PIX</option>
+                    <option value="cartao">Cartão de Crédito/Débito</option>
+                    <option value="combinar">A combinar</option>
+                </select>
+            </div>
+            <button type="submit" id="btnEnviar">📤 Enviar Solicitação</button>
+            <div id="msgForm" class="mensagem"></div>
+        </form>
+    </div>
+</section>
+
+<!-- Sobre Nós -->
+<section id="sobre">
+    <div class="secao-titulo">
+        <h2>Sobre Nós</h2>
+        <div class="linha"></div>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 16px; box-shadow: var(--sombra);">
+        <h3 style="color: var(--primario); margin-bottom: 1rem;">BRT Soluções • Conserto Certo</h3>
+        <p style="margin-bottom: 1rem;">Somos uma empresa focada em serviços de reparo e manutenção com qualidade, transparência e agilidade. Atuamos na Grande Curitiba e região, levando soluções seguras para residências e comércios.</p>
+        <p style="margin-bottom: 1rem;">Cada serviço é realizado com dedicação, usando materiais adequados e seguindo normas técnicas, garantindo sua tranquilidade e a durabilidade que você merece.</p>
+        <p style="margin-bottom: 1rem;"><strong>⏰ Horário de Atendimento:</strong><br>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 13h</p>
+        <p><strong>📞 Contato:</strong> <a href="tel:+5541991187943" style="color: var(--primario); font-weight: 600;">(41) 99118-7943</a><br><strong>✉️</strong> contato@brtsolucoes.com.br</p>
+    </div>
+</section>
+
+<!-- Login -->
+<section id="entrar">
+    <div class="secao-titulo">
+        <h2>Acesso Restrito</h2>
+        <div class="linha"></div>
+        <p class="subtitulo">Apenas Administrador e Profissionais Cadastrados</p>
+    </div>
+    <div class="form-container">
+        <form id="formLogin">
+            <div class="form-grupo">
+                <label for="emailLogin">E-mail</label>
+                <input type="email" id="emailLogin" placeholder="seuemail@exemplo.com" required>
+            </div>
+            <div class="form-grupo">
+                <label for="senhaLogin">Senha</label>
+                <input type="password" id="senhaLogin" placeholder="Sua senha" required>
+            </div>
+            <button type="submit" id="btnLogin">🔐 Entrar</button>
+            <div id="msgLogin" class="mensagem"></div>
+        </form>
+    </div>
+</section>
+
+<!-- Painel Admin -->
+<section id="admin" class="painel">
+    <div class="cabecalho-admin">
+        <h2 style="color: var(--primario);">Painel Administrativo</h2>
+        <button class="btn-sair" onclick="sair()">🚪 Sair</button>
+    </div>
+    
+    <h3 style="margin: 2rem 0 1rem;">📋 Solicitações Recebidas</h3>
+    <div id="listaSolicitacoes">
+        <p style="text-align:center; color: var(--texto-claro); padding: 2rem;">Carregando...</p>
+    </div>
+    
+    <h3 style="margin: 3rem 0 1rem;">👥 Cadastrar Profissional</h3>
+    <div class="form-container" style="max-width: 500px;">
+        <form id="formProfissional">
+            <div class="form-grupo">
+                <label for="nomeProf">Nome Completo</label>
+                <input type="text" id="nomeProf" placeholder="Nome do profissional" required>
+            </div>
+            <div class="form-grupo">
+                <label for="emailProf">E-mail de Acesso</label>
+                <input type="email" id="emailProf" placeholder="email@exemplo.com" required>
+            </div>
+            <button type="submit">✅ Cadastrar Profissional</button>
+            <div id="msgProf" class="mensagem"></div>
+        </form>
+    </div>
+</section>
+
+<!-- Rodapé ✅ NÚMERO ATUALIZADO -->
+<footer>
+    <div class="rodape-container">
+        <div class="rodape-col">
+            <h3>BRT Soluções • Conserto Certo</h3>
+            <p>Soluções em reparos e manutenção para sua casa e empresa.</p>
+        </div>
+        <div class="rodape-col">
+            <h3>Contato</h3>
+            <p>📱 WhatsApp: <a href="https://wa.me/5541991187943" target="_blank">(41) 99118-7943</a></p>
+            <p>📞 Telefone: <a href="tel:+5541991187943">(41) 99118-7943</a></p>
+            <p>✉️ contato@brtsolucoes.com.br</p>
+        </div>
+        <div class="rodape-col">
+            <h3>Atendimento</h3>
+            <p>Grande Curitiba e Região</p>
+            <p>Seg a Sex: 8h às 18h</p>
+            <p>Sáb: 8h às 13h</p>
+        </div>
+    </div>
+    <div class="rodape-baixo">
+        <p>© 2026 BRT Soluções • Conserto Certo — Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+// ==================================================
+//           CONFIGURAÇÃO DO FIREBASE
+//  COLE SEU CÓDIGO ABAIXO NO LUGAR CERTO
+// ==================================================
+const firebaseConfig = {
+  apiKey: "COLE_SUA_API_KEY_AQUI",
+  authDomain: "SEU_PROJETO.firebaseapp.com",
+  projectId: "SEU_PROJETO",
+  storageBucket: "SEU_PROJETO.appspot.com",
+  messagingSenderId: "XXXXXX",
+  appId: "1:XXXXXX:web:XXXXXX"
+};
+// ==================================================
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+const menuBtn = document.getElementById('menuBtn');
+const menuNav = document.getElementById('menuNav');
+const admItem = document.getElementById('adm-item');
+
+menuBtn.addEventListener('click', () => menuNav.classList.toggle('aberto'));
+document.querySelectorAll('.link-nav').forEach(link => {
+    link.addEventListener('click', () => menuNav.classList.remove('aberto'));
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+    });
+});
+
+// Enviar solicitação do cliente
+document.getElementById('formCliente').addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = document.getElementById('btnEnviar');
+    const msg = document.getElementById('msgForm');
+    
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    msg.className = 'mensagem';
+    
+    try {
+        await db.collection('solicitacoes').add({
+            nome: document.getElementById('nome').value.trim(),
+            telefone: document.getElementById('telefone').value.trim(),
+            email: document.getElementById('email').value.trim() || 'Não informado',
+            endereco: document.getElementById('endereco').value.trim(),
+            servico: document.getElementById('servico').value,
+            descricao: document.getElementById('descricao').value.trim() || 'Não informada',
+            pagamento: document.getElementById('pagamento').value || 'A combinar',
+            data: firebase.firestore.FieldValue.serverTimestamp(),
+            status: 'pendente'
+        });
+        
+        msg.className = 'mensagem sucesso';
+        msg.textContent = '✅ Solicitação enviada com sucesso! Entraremos em contato em breve.';
+        e.target.reset();
+    } catch (erro) {
+        msg.className = 'mensagem erro';
+        msg.textContent = '❌ Erro ao enviar: ' + erro.message;
+    } finally {
+        btn.disabled = false;
+        btn.textContent = '📤 Enviar Solicitação';
+    }
+});
+
+// Login
+document.getElementById('formLogin').addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = document.getElementById('btnLogin');
+    const msg = document.getElementById('msgLogin');
+    
+    btn.disabled = true;
+    btn.textContent = 'Entrando...';
+    msg.className = 'mensagem';
+    
+    try {
+        await auth.signInWithEmailAndPassword(
+            document.getElementById('emailLogin').value,
+            document.getElementById('senhaLogin').value
+        );
+    } catch (erro) {
+        msg.className = 'mensagem erro';
+        msg.textContent = '❌ ' + erro.message;
+    } finally {
+        btn.disabled = false;
+        btn.textContent = '🔐 Entrar';
+    }
+});
+
+// Controle de acesso
+auth.onAuthStateChanged(usuario => {
+    const painel = document.getElementById('admin');
+    if (usuario && usuario.email === 'ipbisaque@gmail.com') {
+        admItem.classList.remove('oculto');
+        painel.classList.add('ativo');
+        carregarSolicitacoes();
+    } else {
+        admItem.classList.add('oculto');
+        painel.classList.remove('ativo');
+    }
+});
+
+// Atualizar status
+async function atualizarStatus(id, novoStatus) {
+    try {
+        await db.collection('solicitacoes').doc(id).update({ status: novoStatus });
+        carregarSolicitacoes();
+    } catch (erro) {
+        alert('Erro ao atualizar: ' + erro.message);
+    }
+}
+
+// Carregar solicitações no painel
+async function carregarSolicitacoes() {
+    const lista = document.getElementById('listaSolicitacoes');
+    lista.innerHTML = '<p style="text-align:center; color: var(--texto-claro);">Carregando...</p>';
+    
+    try {
+        const snap = await db.collection('solicitacoes').orderBy('data', 'desc').limit(50).get();
+        lista.innerHTML = '';
+        
+        if (snap.empty) {
+            lista.innerHTML = '<p style="text-align:center; color: var(--texto-claro); padding: 2rem;">Nenhuma solicitação recebida ainda.</p>';
+            return;
+        }
+        
+        snap.forEach(doc => {
+            const s = doc.data();
+            const data = s.data?.toDate ? s.data.toDate().toLocaleString('pt-BR') : '---';
+            const statusClasse = s.status === 'concluido' ? 'status-concluido' : 
+                                  s.status === 'andamento' ? 'status-andamento' : 'status-pendente';
+            const badgeClasse = s.status === 'concluido' ? 'badge-concluido' : 
+                                s.status === 'andamento' ? 'badge-andamento' : 'badge-pendente';
+            const statusTexto = s.status === 'concluido' ? '✅ Concluído' : 
+                                s.status === 'andamento' ? '🔄 Em Andamento' : '⏳ Pendente';
+            
+            lista.innerHTML += `
+            <div class="solicitacao-card ${statusClasse}">
+                <strong style="font-size: 1.1rem;">${s.nome}</strong>
+                <span class="status-badge ${badgeClasse}">${statusTexto}</span><br>
+                📞 ${s.telefone}${s.email !== 'Não informado' ? ` | ✉️ ${s.email}` : ''}<br>
+                📍 ${s.endereco}<br>
+                🔧 Serviço: ${s.servico}<br>
+                ${s.descricao !== 'Não informada' ? `📝 ${s.descricao}<br>` : ''}
+                💰 Pagamento: ${s.pagamento}<br>
+                <small style="color: var(--texto-claro);">${data}</small>
+                <select class="select-status" onchange="atualizarStatus('${doc.id}', this.value)">
+                    <option value="pendente" ${s.status === 'pendente' ? 'selected' : ''}>⏳ Pendente</option>
+                    <option value="andamento" ${s.status === 'andamento' ?
