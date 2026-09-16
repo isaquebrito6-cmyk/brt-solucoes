@@ -3,579 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </>BRT Soluções | Conserto Certo</>
-    <!-- Fonte e Ícones -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Firebase -->
+    <title>BRT Soluções • Conserto Certo</title>
+    <!-- Aqui você vai colar sua configuração do Firebase -->
+    <!-- COPIE E COLE SEU CÓDIGO DO FIREBASE ABAIXO -->
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-
-    <script>
-        // CONFIGURAÇÃO DO FIREBASE — VOCÊ VAI SUBSTITUIR PELA SUA DEPOIS
-        const firebaseConfig = {
-  apiKey: "AIzaSyBXXXXXXXXXXXXXXXXXXXX",
-  authDomain: "brt-solucoes.firebaseapp.com",
-  projectId: "brt-solucoes",
-  storageBucket: "brt-solucoes.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abc123def456"
-};
- firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const db = firebase.firestore();
-    </script>
-
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        :root {
-            --azul: #0F2B48;
-            --laranja: #FF9800;
-            --cinza-claro: #F5F7FA;
-            --branco: #FFFFFF;
-            --texto: #333333;
-        }
-
-        body {
-            background-color: var(--cinza-claro);
-            color: var(--texto);
-            line-height: 1.6;
-        }
-
-        /* CABEÇALHO */
-        header {
-            background: linear-gradient(135deg, var(--azul) 0%, #1a3f66 100%);
-            color: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: white;
-            text-decoration: none;
-        }
-        .logo span {
-            color: var(--laranja);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .menu a {
-            color: white;
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .menu a:hover { color: var(--laranja); }
-
-        /* TELAS */
-        .tela {
-            display: none;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            min-height: 80vh;
-        }
-        .ativa { display: block; }
-
-        /* TELA INICIAL */
-        .inicio {
-            text-align: center;
-            padding-top: 4rem;
-            padding-bottom: 5rem;
-        }
-        .inicio h1 {
-            font-size: 3rem;
-            color: var(--azul);
-            margin-bottom: 0.5rem;
-        }
-        .inicio h2 {
-            font-size: 1.8rem;
-            color: var(--laranja);
-            margin-bottom: 2rem;
-        }
-        .inicio p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            color: #555;
-        }
-
-        .botoes {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-primario {
-            background-color: var(--azul);
-            color: white;
-        }
-        .btn-primario:hover {
-            background-color: #1a3f66;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(15, 43, 72, 0.3);
-        }
-        .btn-destaque {
-            background-color: var(--laranja);
-            color: white;
-        }
-        .btn-destaque:hover {
-            background-color: #fb8c00;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
-        }
-
-        /* SERVIÇOS */
-        .servicos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .servico-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        :root { --primario: #1a73e8; --secundario: #0d47a1; --destaque: #ff6d00; --escuro: #202124; --claro: #f8f9fa; }
+        body { background: #f5f7fa; color: #333; }
+        
+        /* Barra de Navegação */
+        nav { background: linear-gradient(135deg, var(--primario), var(--secundario)); padding: 1rem 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo { color: white; font-size: 1.3rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: #ffd600; }
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; }
+        
+        /* Seções */
+        section { padding: 6rem 5% 3rem; max-width: 1200px; margin: 0 auto; }
+        h2 { color: var(--secundario); margin-bottom: 2rem; text-align: center; font-size: 1.8rem; }
+        
+        /* Hero */
+        #inicio { background: linear-gradient(rgba(26, 115, 232, 0.9), rgba(13, 71, 161, 0.9)), url('') center/cover; color: white; min-height: 100vh; display: flex; align-items: center; text-align: center; padding-top: 5rem; }
+        .hero-content h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+        .btn { display: inline-block; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; margin: 0.3rem; }
+        .btn-destaque { background: var(--destaque); color: white; }
+        .btn-destaque:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 109, 0, 0.3); }
+        .btn-branco { background: white; color: var(--primario); }
+        
+        /* Serviços */
+        .servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .servico-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: 0.3s; border-top: 4px solid var(--primario); }
         .servico-card:hover { transform: translateY(-5px); }
-        .servico-card i {
-            font-size: 2.5rem;
-            color: var(--laranja);
-            margin-bottom: 1rem;
-        }
-        .servico-card h3 {
-            color: var(--azul);
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-        }
-
-        /* FORMULÁRIOS */
-        .form-box {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .form-box h2 {
-            text-align: center;
-            color: var(--azul);
-            margin-bottom: 1.5rem;
-        }
-        .campo {
-            margin-bottom: 1.2rem;
-        }
-        .campo label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--azul);
-        }
-        .campo input, .campo textarea, .campo select {
-            width: 100%;
-            padding: 0.9rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-        .campo input:focus, .campo textarea:focus {
-            outline: none;
-            border-color: var(--laranja);
-            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.15);
-        }
-
-        /* PAINEIS */
-        .painel-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-        }
-        .painel-card h3 {
-            color: var(--azul);
-            margin-bottom: 0.5rem;
-        }
-
-        .aviso-regiao {
-            background: #e3f2fd;
-            border-left: 4px solid var(--azul);
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        /* RODAPÉ */
-        footer {
-            background: var(--azul);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-        /* RESPONSIVO */
+        .servico-card h3 { color: var(--primario); margin-bottom: 0.8rem; }
+        
+        /* Formulários */
+        form { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); max-width: 500px; margin: 0 auto; }
+        input, select, textarea { width: 100%; padding: 0.9rem; margin: 0.6rem 0; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primario); }
+        button[type="submit"] { width: 100%; padding: 1rem; background: var(--primario); color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 0.5rem; }
+        button[type="submit"]:hover { background: var(--secundario); }
+        
+        /* Painéis */
+        .painel { display: none; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-top: 1rem; }
+        .painel.ativo { display: block; }
+        .admin-area { background: #e8f0fe; border-left: 4px solid var(--primario); }
+        .oculto { display: none !important; }
+        
+        /* Rodapé */
+        footer { background: var(--escuro); color: white; text-align: center; padding: 2rem 5%; margin-top: 3rem; }
+        
+        /* Responsivo */
         @media (max-width: 768px) {
-            .inicio h1 { font-size: 2rem; }
-            .menu { display: none; }
+            .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; background: var(--escuro); flex-direction: column; padding: 4rem 2rem; transition: 0.3s; }
+            .nav-links.aberto { right: 0; }
+            .menu-btn { display: block; }
+            .hero-content h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
+    <!-- Barra de Navegação -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">BRT Soluções • Conserto Certo</div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navMenu">
+                <li><a href="#inicio" onclick="fecharMenu()">Início</a></li>
+                <li><a href="#servicos" onclick="fecharMenu()">Serviços</a></li>
+                <li><a href="#cadastro" onclick="fecharMenu()">Solicitar Atendimento</a></li>
+                <li><a href="#login" onclick="fecharMenu()">Entrar</a></li>
+                <li id="linkAdmin" class="oculto"><a href="#admin" onclick="fecharMenu()">Painel Admin</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- CABEÇALHO -->
-    <header>
-        <nav>
-            <a href="#" class="logo" onclick="mostrarTela('inicio')">BRT <span>Soluções</span></a>
-            <div class="menu">
-                <a href="#" onclick="mostrarTela('inicio')">Início</a>
-                <a href="#" onclick="mostrarTela('servicos')">Serviços</a>
-                <a href="#" onclick="mostrarTela('contato')">Contato</a>
-                <a href="#" onclick="mostrarTela('login')">Entrar</a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- TELA INICIO -->
-    <section class="tela ativa" id="inicio">
-        <div class="inicio">
-            <h1>BRT Soluções</h1>
-            <h2>Conserto Certo</h2>
-            <p>✅ Serviços de elétrica, hidráulica, telhados e manutenção predial geral. Atendimento profissional na Grande Curitiba e Região Metropolitana. Qualidade, segurança e confiança!</p>
-            <div class="botoes">
-                <button class="btn btn-primario" onclick="mostrarTela('servicos')">Ver Serviços</button>
-                <button class="btn btn-destaque" onclick="mostrarTela('cadastro-cliente')">Solicitar Atendimento</button>
-            </div>
+    <!-- Início -->
+    <section id="inicio">
+        <div class="hero-content">
+            <h1>BRT Soluções • Conserto Certo</h1>
+            <p>Reparos elétricos, hidráulicos, telhados e manutenção em geral — Grande Curitiba e Região</p>
+            <a href="#cadastro" class="btn btn-destaque">Solicitar Serviço</a>
+            <a href="https://wa.me/5541999999999" target="_blank" class="btn btn-branco">📱 WhatsApp</a>
         </div>
     </section>
 
-    <!-- TELA SERVIÇOS -->
-    <section class="tela" id="servicos">
-        <h2 style="text-align:center; font-size:2rem; color:var(--azul); margin-bottom:0.5rem;">Nossos Serviços</h2>
-        <p style="text-align:center; color:#666; margin-bottom:2rem;">Soluções completas para sua casa ou empresa</p>
-        
+    <!-- Serviços -->
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
         <div class="servicos-grid">
             <div class="servico-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Reparos Elétricos</h3>
-                <p>Troca de tomadas, chuveiros, fiação, painéis, instalações novas e correções.</p>
+                <h3>⚡ Elétrica</h3>
+                <p>Troca de chuveiros, tomadas, fiação, instalações e reparos gerais.</p>
             </div>
             <div class="servico-card">
-                <i class="fas fa-tint"></i>
-                <h3>Hidráulica</h3>
-                <p>Vazamentos, tubulações, registros, caixas d'água, instalação de torneiras e reparos gerais.</p>
+                <h3>💧 Hidráulica</h3>
+                <p>Vazamentos, troca de registros, torneiras, caixas d'água e muito mais.</p>
             </div>
             <div class="servico-card">
-                <i class="fas fa-home"></i>
-                <h3>Telhados</h3>
-                <p>Reparo, reforma, impermeabilização e construção de telhados novos.</p>
+                <h3>🏠 Telhados</h3>
+                <p>Reparo e construção de telhados novos, impermeabilização e calhas.</p>
             </div>
             <div class="servico-card">
-                <i class="fas fa-building"></i>
-                <h3>Manutenção Predial</h3>
-                <p>Serviços gerais, reformas pequenas, conservação e reparos em geral.</p>
+                <h3>🔧 Manutenção Predial</h3>
+                <p>Serviços completos de conservação e manutenção para residências e comércios.</p>
             </div>
         </div>
     </section>
 
-    <!-- TELA LOGIN -->
-    <section class="tela" id="login">
-        <div class="form-box">
-            <h2>Acesso ao Sistema</h2>
-            <div class="campo">
-                <label>E-mail</label>
-                <input type="email" id="email-login" placeholder="seu@email.com">
-            </div>
-            <div class="campo">
-                <label>Senha</label>
-                <input type="password" id="senha-login" placeholder="••••••••">
-            </div>
-            <button class="btn btn-primario" style="width:100%;" onclick="fazerLogin()">Entrar</button>
-            <p style="text-align:center; margin-top:1rem;">Não tem conta? <a href="#" onclick="mostrarTela('cadastro-cliente')" style="color:var(--laranja); font-weight:600;">Cadastre-se</a></p>
-        </div>
+    <!-- Cadastro / Solicitação -->
+    <section id="cadastro">
+        <h2>Solicitar Atendimento</h2>
+        <form id="formCliente">
+            <input type="text" id="nome" placeholder="Seu nome completo" required>
+            <input type="tel" id="telefone" placeholder="Seu WhatsApp (com DDD)" required>
+            <input type="email" id="email" placeholder="Seu e-mail">
+            <input type="text" id="endereco" placeholder="Endereço + Bairro + Cidade" required>
+            <select id="servico" required>
+                <option value="">Selecione o tipo de serviço</option>
+                <option value="eletrico">Elétrico</option>
+                <option value="hidraulico">Hidráulico</option>
+                <option value="telhado">Reparo ou construção de telhado</option>
+                <option value="manutencao">Manutenção Predial / Geral</option>
+                <option value="outro">Outro</option>
+            </select>
+            <textarea id="descricao" rows="4" placeholder="Descreva o que precisa..."></textarea>
+            <select id="cobranca">
+                <option value="">Forma de pagamento preferida</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="pix">PIX</option>
+                <option value="cartao">Cartão</option>
+                <option value="orçamento">A combinar</option>
+            </select>
+            <button type="submit">Enviar Solicitação ✅</button>
+        </form>
     </section>
 
-    <!-- TELA CADASTRO CLIENTE -->
-    <section class="tela" id="cadastro-cliente">
-        <div class="form-box">
-            <h2>Cadastro de Cliente</h2>
-            <div class="campo">
-                <label>Nome Completo</label>
-                <input type="text" id="nome-cli" placeholder="Seu nome completo">
-            </div>
-            <div class="campo">
-                <label>E-mail</label>
-                <input type="email" id="email-cli" placeholder="seu@email.com">
-            </div>
-            <div class="campo">
-                <label>Telefone / WhatsApp</label>
-                <input type="tel" id="tel-cli" placeholder="(41) 99999-9999">
-            </div>
-            <div class="campo">
-                <label>Endereço (Bairro, Cidade)</label>
-                <input type="text" id="end-cli" placeholder="Rua, nº, Bairro - Curitiba/PR">
-            </div>
-            <div class="campo">
-                <label>Senha</label>
-                <input type="password" id="senha-cli" placeholder="Crie uma senha">
-            </div>
-            <button class="btn btn-destaque" style="width:100%;" onclick="cadastrarCliente()">Finalizar Cadastro</button>
-        </div>
+    <!-- Login -->
+    <section id="login">
+        <h2>Acesso Restrito</h2>
+        <form id="formLogin">
+            <input type="email" id="emailLogin" placeholder="Seu e-mail" required>
+            <input type="password" id="senhaLogin" placeholder="Sua senha" required>
+            <button type="submit">Entrar</button>
+            <p style="text-align:center; margin-top:1rem; color:#666;">Acesso apenas para Administrador e Profissionais</p>
+        </form>
     </section>
 
-    <!-- TELA PAINEL ADMINISTRADOR -->
-    <section class="tela" id="painel-admin">
-        <h2 style="color:var(--azul); font-size:2rem;">👑 Painel Administrativo</h2>
-        <p style="color:green; font-weight:600;">Acesso total — ipbisaque@gmail.com</p>
+    <!-- Painel Administrativo -->
+    <section id="admin" class="admin-area" style="display:none;">
+        <h2>Painel Administrativo — BRT Soluções</h2>
+        <button onclick="sair()" style="float:right; background:#e53935; color:white; border:none; padding:0.5rem 1rem; border-radius:6px;">Sair</button>
         
-        <div class="painel-card">
-            <h3>📋 Serviços Disponíveis</h3>
-            <p>Elétrica • Hidráulica • Telhados • Manutenção Predial</p>
-        </div>
-        <div class="painel-card">
-            <h3>👥 Usuários</h3>
-            <p>Clientes cadastrados: <span id="qtd-clientes">0</span> | Profissionais: <span id="qtd-prof">1</span></p>
-            <button class="btn btn-primario" style="padding:0.5rem 1rem; font-size:0.9rem; margin-top:0.5rem;">Cadastrar Novo Profissional</button>
-        </div>
-        <div class="painel-card">
-            <h3>📩 Solicitações Recebidas</h3>
-            <div id="lista-solicitacoes">
-                <p style="color:#777;">Nenhuma solicitação ainda.</p>
-            </div>
-        </div>
-        <div class="painel-card">
-            <h3>💰 Formas de Cobrança</h3>
-            <p>Pix, Dinheiro, Cartão, Boleto — configurável</p>
-        </div>
-        <div class="painel-card">
-            <h3>📍 Região de Atendimento</h3>
-            <p>Grande Curitiba e Região Metropolitana — expansão futura</p>
-        </div>
-    </section>
-
-    <!-- TELA PAINEL CLIENTE -->
-    <section class="tela" id="painel-cliente">
-        <div class="aviso-regiao">
-            ✅ Atendemos toda a Grande Curitiba e Região Metropolitana!
-        </div>
-        <h2 style="color:var(--azul);">Olá, <span id="nome-usuario"></span>!</h2>
+        <h3>Solicitações Recebidas</h3>
+        <div id="listaSolicitacoes"></div>
         
-        <div class="painel-card">
-            <h3>📝 Solicitar Serviço</h3>
-            <div class="campo">
-                <label>Qual serviço precisa?</label>
-                <select id="servico-sol">
-                    <option>Reparo Elétrico</option>
-                    <option>Serviço Hidráulico</option>
-                    <option>Reparo ou Construção de Telhado</option>
-                    <option>Manutenção Predial Geral</option>
-                </select>
-            </div>
-            <div class="campo">
-                <label>Descreva o problema</label>
-                <textarea id="desc-sol" rows="4" placeholder="Ex: Vazamento no banheiro, tomada queimada..."></textarea>
-            </div>
-            <button class="btn btn-destaque" onclick="enviarSolicitacao()">Enviar Solicitação</button>
-        </div>
-
-        <div class="painel-card">
-            <h3>📞 Contato Rápido</h3>
-            <p><i class="fab fa-whatsapp"></i> WhatsApp: (41) 9XXXX-XXXX</p>
-            <p><i class="fas fa-phone"></i> Telefone: (41) 3XXXX-XXXX</p>
-            <p><i class="fas fa-envelope"></i> contato@brtsolucoes.com.br</p>
-        </div>
+        <h3 style="margin-top:3rem;">Gerenciar Profissionais</h3>
+        <form id="formProfissional">
+            <input type="text" id="nomeProf" placeholder="Nome do Profissional">
+            <input type="email" id="emailProf" placeholder="E-mail">
+            <button type="submit">Adicionar Profissional</button>
+        </form>
+        <div id="listaProfissionais"></div>
     </section>
 
-    <!-- TELA PAINEL PROFISSIONAL -->
-    <section class="tela" id="painel-prof">
-        <h2 style="color:var(--azul);">🔧 Área do Profissional</h2>
-        <div class="painel-card">
-            <h3>📩 Pedidos Recebidos</h3>
-            <div id="pedidos-prof">
-                <p style="color:#777;">Nenhum pedido novo.</p>
-            </div>
-        </div>
-        <div class="painel-card">
-            <h3>✅ Serviços Concluídos</h3>
-            <p>Registre aqui os serviços finalizados.</p>
-        </div>
-    </section>
-
-    <!-- TELA CONTATO -->
-    <section class="tela" id="contato">
-        <div class="form-box">
-            <h2>Fale Conosco</h2>
-            <p style="text-align:center; margin-bottom:1.5rem;">Grande Curitiba e Região Metropolitana</p>
-            <div class="campo">
-                <label>Nome</label>
-                <input type="text" placeholder="Seu nome">
-            </div>
-            <div class="campo">
-                <label>Telefone / WhatsApp</label>
-                <input type="tel" placeholder="(41) 99999-9999">
-            </div>
-            <div class="campo">
-                <label>Mensagem</label>
-                <textarea rows="4" placeholder="Descreva o que precisa..."></textarea>
-            </div>
-            <button class="btn btn-destaque" style="width:100%;">Enviar Mensagem</button>
-        </div>
-    </section>
-
-    <!-- RODAPÉ -->
+    <!-- Rodapé -->
     <footer>
-        <p><strong>BRT Soluções | Conserto Certo</strong></p>
-        <p>Elétrica • Hidráulica • Telhados • Manutenção Predial</p>
-        <p>Atendimento: Grande Curitiba e Região Metropolitana</p>
-        <p style="margin-top:0.5rem; font-size:0.9rem;">© 2026 Todos os direitos reservados.</p>
+        <p><strong>BRT Soluções • Conserto Certo</strong></p>
+        <p>Atendimento: Grande Curitiba e Região</p>
+        <p>📱 (41) 99999-9999 | ✉️ contato@brtsolucoes.com.br</p>
     </footer>
 
-
     <script>
-        // === CONTROLE DE TELAS ===
-        function mostrarTela(id) {
-            document.querySelectorAll('.tela').forEach(t => t.classList.remove('ativa'));
-            document.getElementById(id).classList.add('ativa');
-            window.scrollTo(0,0);
+        // ========== CONFIGURAÇÃO DO FIREBASE ==========
+        // COPIE SEU CÓDIGO DO FIREBASE AQUI EMBAIXO, SUBSTITUINDO O EXEMPLO
+        const firebaseConfig = {
+            apiKey: "COLE_SUA_API_KEY_AQUI",
+            authDomain: "SEU_PROJETO.firebaseapp.com",
+            projectId: "SEU_PROJETO",
+            storageBucket: "SEU_PROJETO.appspot.com",
+            messagingSenderId: "XXXXXX",
+            appId: "1:XXXXXX:web:XXXXXX"
+        };
+        // ==============================================
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // Menu responsivo
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('aberto');
+        }
+        function fecharMenu() {
+            document.getElementById('navMenu').classList.remove('aberto');
         }
 
-        // === LOGIN ===
-        async function fazerLogin() {
-            const email = document.getElementById('email-login').value.trim();
-            const senha = document.getElementById('senha-login').value;
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const id = this.getAttribute('href');
+                document.querySelector(id).scrollIntoView({behavior:'smooth'});
+            });
+        });
+
+        // Cadastro de Cliente
+        document.getElementById('formCliente').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const dados = {
+                nome: document.getElementById('nome').value,
+                telefone: document.getElementById('telefone').value,
+                email: document.getElementById('email').value,
+                endereco: document.getElementById('endereco').value,
+                servico: document.getElementById('servico').value,
+                descricao: document.getElementById('descricao').value,
+                cobranca: document.getElementById('cobranca').value,
+                data: new Date(),
+                status: 'pendente'
+            };
+            
+            await db.collection('solicitacoes').add(dados);
+            alert('Solicitação enviada com sucesso! Entraremos em contato em breve. ✅');
+            e.target.reset();
+        });
+
+        // Login
+        document.getElementById('formLogin').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('emailLogin').value;
+            const senha = document.getElementById('senhaLogin').value;
 
             try {
                 await auth.signInWithEmailAndPassword(email, senha);
-                
-                if (email === 'ipbisaque@gmail.com') {
-                    mostrarTela('painel-admin');
-                    carregarDadosAdmin();
-                } else {
-                    const userDoc = await db.collection('usuarios').doc(auth.currentUser.uid).get();
-                    const tipo = userDoc.data().tipo;
-                    if (tipo === 'profissional') mostrarTela('painel-prof');
-                    else {
-                        document.getElementById('nome-usuario').textContent = userDoc.data().nome;
-                        mostrarTela('painel-cliente');
-                    }
+            } catch (erro) {
+                alert('Erro ao entrar: ' + erro.message);
+            }
+        });
+
+        // Verificar se está logado
+        auth.onAuthStateChanged(usuario => {
+            if (usuario) {
+                if (usuario.email === 'ipbisaque@gmail.com') {
+                    document.getElementById('linkAdmin').classList.remove('oculto');
+                    document.getElementById('admin').style.display = 'block';
+                    carregarDados();
                 }
-            } catch (e) {
-                alert('Erro: ' + e.message);
+            } else {
+                document.getElementById('linkAdmin').classList.add('oculto');
+                document.getElementById('admin').style.display = 'none';
             }
+        });
+
+        // Sair
+        function sair() {
+            auth.signOut();
+            document.getElementById('linkAdmin').classList.add('oculto');
+            document.getElementById('admin').style.display = 'none';
+            window.scrollTo({top:0, behavior:'smooth'});
         }
 
-        // === CADASTRO CLIENTE ===
-        async function cadastrarCliente() {
-            const nome = document.getElementById('nome-cli').value.trim();
-            const email = document.getElementById('email-cli').value.trim();
-            const tel = document.getElementById('tel-cli').value.trim();
-            const end = document.getElementById('end-cli').value.trim();
-            const senha = document.getElementById('senha-cli').value;
-
-            if (!nome || !email || !senha) { alert('Preencha todos os campos!'); return; }
-
-            try {
-                const cred = await auth.createUserWithEmailAndPassword(email, senha);
-                await db.collection('usuarios').doc(cred.user.uid).set({
-                    nome, email, telefone: tel, endereco: end,
-                    tipo: 'cliente', regiao: 'Grande Curitiba',
-                    data: firebase.firestore.FieldValue.serverTimestamp()
-                });
-                alert('Cadastro realizado! Bem-vindo(a)!');
-                document.getElementById('nome-usuario').textContent = nome;
-                mostrarTela('painel-cliente');
-            } catch (e) {
-                alert('Erro: ' + e.message);
-            }
-        }
-
-        // === ENVIAR SOLICITAÇÃO ===
-        async function enviarSolicitacao() {
-            const servico = document.getElementById('servico-sol').value;
-            const desc = document.getElementById('desc-sol').value.trim();
-            const user = auth.currentUser;
-
-            if (!user) { alert('Faça login primeiro!'); return; }
-            if (!desc) { alert('Descreva o que precisa!'); return; }
-
-            const dadosCli = await db.collection('usuarios').doc(user.uid).get();
-
-            await db.collection('solicitacoes').add({
-                servico, descricao: desc,
-                clienteId: user.uid,
-                clienteNome: dadosCli.data().nome,
-                clienteTel: dadosCli.data().telefone,
-                data: firebase.firestore.FieldValue.serverTimestamp(),
-                status: 'pendente'
-            });
-
-            alert('Solicitação enviada! Entraremos em contato em breve.');
-            document.getElementById('desc-sol').value = '';
-        }
-
-        // === CARREGAR DADOS ADMIN ===
-        async function carregarDadosAdmin() {
-            const lista = document.getElementById('lista-solicitacoes');
-            const snap = await db.collection('solicitacoes').orderBy('data', 'desc').get();
+        // Carregar solicitações
+        async function carregarDados() {
+            const lista = document.getElementById('listaSolicitacoes');
+            lista.innerHTML = '<p>Carregando...</p>';
             
-            if (snap.empty) {
-                lista.innerHTML = '<p style="color:#777;">Nenhuma solicitação recebida ainda.</p>';
-                return;
-            }
-
+            const snap = await db.collection('solicitacoes').orderBy('data', 'desc').get();
             lista.innerHTML = '';
+            
             snap.forEach(doc => {
-                const d = doc.data();
+                const s = doc.data();
                 lista.innerHTML += `
-                    <div class="painel-card" style="background:#f9f9f9;">
-                        <strong>${d.servico}</strong> — ${d.clienteNome}<br>
-                        <small>Telefone: ${d.clienteTel}</small><br>
-                        <p>${d.descricao}</p>
-                        <span style="color:orange; font-weight:600;">Status: ${d.status}</span>
-                    </div>
-                `;
+                <div style="border:1px solid #ddd; padding:1rem; margin:0.5rem 0; border-radius:8px;">
+                    <strong>${s.nome}</strong><br>
+                    📞 ${s.telefone} | 📍 ${s.endereco}<br>
+                    Serviço: ${s.servico}<br>
+                    Pagamento: ${s.cobranca || 'A combinar'}<br>
+                    <em>${new Date(s.data.seconds*1000).toLocaleString('pt-BR')}</em>
+                </div>`;
             });
         }
-    </script>
 
+        // Adicionar profissional
+        document.getElementById('formProfissional').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const nome = document.getElementById('nomeProf').value;
+            const email = document.getElementById('emailProf').value;
+            
+            await db.collection('profissionais').add({nome, email, data: new Date()});
+            alert('Profissional adicionado! ✅');
+            e.target.reset();
+        });
+    </script>
 </body>
 </html>
