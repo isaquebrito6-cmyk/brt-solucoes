@@ -11,11 +11,9 @@
     
     <title>BRT Soluções • Conserto Certo</title>
     
-    <!-- Ícone -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231565C0'/%3E%3Cpath d='M50 20L30 35v22c0 7 4 13 10 17l10 6 10-6c6-4 10-10 10-17V35L50 20zm0 40c-4 0-7-2-9-4l-2-2V40l11-9 11 9v14l-2 2c-2 2-5 4-9 4z' fill='white'/%3E%3Cpath d='M75 80L50 63 25 80v-8l25-15 25 15v8z' fill='%23E65100'/%3E%3C/svg%3E">
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231565C0'/%3E%3Cpath d='M50 20L30 35v22c0 7 4 13 10 17l10 6 10-6c6-4 10-10 10-17V35L50 20zm0 40c-4 0-7-2-9-4l-2-2V40l11-9 11 9v14l-2 2c-2 2-5 4-9 4z' fill='white'/%3E%3Cpath d='M75 80L50 63 25 80v-8l25-15 25 15v8z' fill='%23E65100'/%3E%3C/svg%3E">
     
-    <!-- ✅ MANIFESTO — CHAVE DA INSTALAÇÃO -->
     <link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22BRT%20Solu%C3%A7%C3%B5es%20%E2%80%A2%20Conserto%20Certo%22%2C%22short_name%22%3A%22BRT%20Solu%C3%A7%C3%B5es%22%2C%22description%22%3A%22El%C3%A9trica%2C%20Hidr%C3%A1ulica%2C%20Telhados%2C%20Vidro%2C%20Pergolado%2C%20Manuten%C3%A7%C3%A3o%20Predial%22%2C%22start_url%22%3A%22%2Fbrt-solucoes%2F%22%2C%22scope%22%3A%22%2Fbrt-solucoes%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23F8FAFC%22%2C%22theme_color%22%3A%22%231565C0%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%3Bcharset%3Dutf-8%2C%253Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%253E%253Crect%20width%3D%27100%27%20height%3D%27100%27%20rx%3D%2720%27%20fill%3D%27%25231565C0%27%2F%253E%253Cpath%20d%3D%27M50%2020L30%2035v22c0%207%204%2013%2010%2017l10%206%2010-6c6-4%2010-10%2010-17V35L50%2020zm0%2040c-4%200-7-2-9-4l-2-2V40l11-9%2011%209v14l-2%202c-2%202-5%204-9%204z%27%20fill%3D%27white%27%2F%253E%253Cpath%20d%3D%27M75%2080L50%2063%2025%2080v-8l25-15%2025%2015v8z%27%20fill%3D%27%2523E65100%27%2F%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22any%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D">
     
     <style>
@@ -32,14 +30,14 @@
         
         nav{background:white;position:sticky;top:0;z-index:999;box-shadow:0 2px 10px rgba(0,0,0,.08)}
         .nav-container{max-width:1200px;margin:0 auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center;height:70px}
-        .logo{font-size:1.2rem;font-weight:800}
+        .logo{font-size:1.1rem;font-weight:800}
         .logo-azul{color:var(--azul)}
         .logo-laranja{color:var(--laranja)}
         .menu-btn{display:none;font-size:1.8rem;background:none;border:none;cursor:pointer}
-        .nav-links{display:flex;gap:.3rem;list-style:none;font-weight:600;align-items:center}
-        .nav-links a{padding:.7rem 1rem;border-radius:8px;transition:.2s}
+        .nav-links{display:flex;gap:.2rem;list-style:none;font-weight:600;align-items:center}
+        .nav-links a{padding:.6rem .8rem;border-radius:8px;transition:.2s;display:flex;align-items:center;gap:.3rem;font-size:.9rem}
         .nav-links a:hover{background:rgba(21,101,192,.08);color:var(--azul)}
-        .btn-nav{background:linear-gradient(90deg,var(--azul),#42A5F5);color:white!important;margin-left:.5rem}
+        .btn-nav{background:linear-gradient(90deg,var(--azul),#42A5F5);color:white!important;margin-left:.3rem}
         .btn-nav:hover{background:linear-gradient(90deg,var(--laranja),#FF9100)}
         
         section{max-width:1200px;margin:0 auto;padding:3rem 1.2rem}
@@ -59,23 +57,35 @@
         .btn-branco{background:white;color:var(--azul)}
         
         .grid-servicos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
-        .card-servico{background:white;padding:2rem;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,.06);border-top:4px solid var(--azul);transition:.3s}
+        .card-servico{background:white;padding:2rem;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,.06);border-top:4px solid var(--azul);transition:.3s;cursor:pointer}
         .card-servico:hover{transform:translateY(-8px);border-top-color:var(--laranja)}
-        .card-servico h3{color:var(--azul);margin:1rem 0}
+        .card-servico h3{color:var(--azul);margin:1rem 0;display:flex;align-items:center;gap:.5rem}
         .card-servico ul{margin-top:1rem}
         .card-servico li{list-style:none;padding:.5rem 0;border-bottom:1px dashed #eee}
         .card-servico li::before{content:'✓ ';color:green;font-weight:bold}
         
+        .grid-icones{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2rem 0}
+        .item-icone{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1rem;border-radius:12px;background:white;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s;cursor:pointer}
+        .item-icone:hover{background:rgba(21,101,192,.05);transform:translateY(-3px)}
+        .item-icone span:first-child{font-size:1.8rem}
+        .item-icone span:last-child{font-size:.85rem;font-weight:600;color:var(--texto);text-align:center}
+        
         .whatsapp-fixo{position:fixed;bottom:25px;right:20px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 15px rgba(37,211,102,.4);z-index:999;animation:pulse 2s infinite}
         @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}}
         
-        footer{background:#0F1E33;color:white;padding:3rem 1.5rem;text-align:center;margin-top:3rem}
+        footer{background:#0F1E33;color:white;padding:3rem 1.5rem;margin-top:3rem}
+        .footer-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}
+        .footer-col h4{margin-bottom:1rem;color:var(--dourado)}
+        .footer-col a{display:block;margin-bottom:.6rem;opacity:.85;transition:.2s}
+        .footer-col a:hover{opacity:1;color:var(--dourado)}
+        .footer-bottom{text-align:center;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);opacity:.7;font-size:.9rem}
         
         @media(max-width:768px){
             .menu-btn{display:block}
             .nav-links{position:fixed;top:0;right:-100%;height:100vh;width:280px;background:white;flex-direction:column;padding:4rem 2rem;box-shadow:-5px 0 20px rgba(0,0,0,.15);transition:.3s;align-items:flex-start}
             .nav-links.aberto{right:0}
             .hero h1{font-size:1.6rem}
+            .grid-icones{grid-template-columns:repeat(2,1fr)}
         }
     </style>
 </head>
@@ -97,11 +107,11 @@
         </a>
         <button class="menu-btn" id="menuBtn">☰</button>
         <ul class="nav-links" id="menuNav">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#diferencial">Diferencial</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><a href="#solicitar" class="btn-nav">📋 Orçamento Grátis</a></li>
+            <li><a href="#inicio">🏠 Início</a></li>
+            <li><a href="#servicos">🔧 Serviços</a></li>
+            <li><a href="#diferencial">⭐ Diferencial</a></li>
+            <li><a href="#contato">📞 Contato</a></li>
+            <li><a href="#solicitar" class="btn-nav">📋 Orçamento</a></li>
         </ul>
     </div>
 </nav>
@@ -111,6 +121,26 @@
         <h1>Soluções Completas em <span>Reparos, Construção e Coberturas</span></h1>
         <p>Elétrica • Hidráulica • Telhados Convencionais e de Vidro • Pergolado • Manutenção Predial</p>
         <p>Atendimento na Grande Curitiba com qualidade, garantia e transparência.</p>
+        
+        <!-- 📱 ÍCONES RÁPIDOS NA PÁGINA INICIAL -->
+        <div class="grid-icones">
+            <a href="#eletrica" class="item-icone">
+                <span>⚡</span>
+                <span>Elétrica</span>
+            </a>
+            <a href="#hidraulica" class="item-icone">
+                <span>💧</span>
+                <span>Hidráulica</span>
+            </a>
+            <a href="#telhados" class="item-icone">
+                <span>🏠</span>
+                <span>Telhados</span>
+            </a>
+            <a href="#manutencao" class="item-icone">
+                <span>🔧</span>
+                <span>Manutenção</span>
+            </a>
+        </div>
         
         <div class="aviso-orcamento">💰 ORÇAMENTO GRÁTIS — Sem compromisso! Avaliação sem custo</div>
         
@@ -127,7 +157,7 @@
         <div class="linha"></div>
     </div>
     <div class="grid-servicos">
-        <div class="card-servico">
+        <div id="eletrica" class="card-servico">
             ⚡ <h3>Serviços Elétricos</h3>
             <ul>
                 <li>Troca de chuveiros, tomadas e interruptores</li>
@@ -136,7 +166,7 @@
                 <li>Conformidade com normas técnicas</li>
             </ul>
         </div>
-        <div class="card-servico">
+        <div id="hidraulica" class="card-servico">
             💧 <h3>Serviços Hidráulicos</h3>
             <ul>
                 <li>Reparo de vazamentos</li>
@@ -145,7 +175,7 @@
                 <li>Desentupimento e esgoto</li>
             </ul>
         </div>
-        <div class="card-servico">
+        <div id="telhados" class="card-servico">
             🏠 <h3>Telhados e Coberturas</h3>
             <ul>
                 <li>Construção e reforma de telhados</li>
@@ -155,7 +185,7 @@
                 <li>🌿 Pergolado — madeira ou alumínio</li>
             </ul>
         </div>
-        <div class="card-servico">
+        <div id="manutencao" class="card-servico">
             🔧 <h3>Manutenção Predial</h3>
             <ul>
                 <li>Manutenção preventiva e corretiva</li>
@@ -241,36 +271,55 @@
     </div>
 </section>
 
+<!-- 🦶 RODAPÉ COMPLETO COM ÍCONES E LINKS -->
 <footer>
-    <h3 style="color:#FF9100;margin-bottom:1rem">BRT Soluções • Conserto Certo</h3>
-    <p>Qualidade, transparência e garantia em reparos e construção.</p>
-    <p style="margin-top:1rem">📞 (41) 99118-7943 | ✉️ ipbisaque@gmail.com</p>
-    <p style="margin-top:1rem;opacity:.6;font-size:.9rem">© 2026 BRT Soluções — Todos os direitos reservados</p>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>🏢 BRT Soluções • Conserto Certo</h4>
+            <p>Qualidade, transparência e garantia em reparos e construção.</p>
+        </div>
+        <div class="footer-col">
+            <h4>🔧 Serviços</h4>
+            <a href="#eletrica">⚡ Elétrica</a>
+            <a href="#hidraulica">💧 Hidráulica</a>
+            <a href="#telhados">🏠 Telhados & Coberturas</a>
+            <a href="#manutencao">🔧 Manutenção Predial</a>
+        </div>
+        <div class="footer-col">
+            <h4>📞 Contato</h4>
+            <a href="tel:+5541991187943">📞 (41) 99118-7943</a>
+            <a href="mailto:ipbisaque@gmail.com">✉️ ipbisaque@gmail.com</a>
+            <a href="https://wa.me/5541991187943" target="_blank">💬 WhatsApp</a>
+        </div>
+        <div class="footer-col">
+            <h4>📍 Área de Atendimento</h4>
+            <p>Curitiba • Colombo • São José dos Pinhais • Pinhais • Araucária • Fazenda Rio Grande</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 BRT Soluções • Conserto Certo — Todos os direitos reservados</p>
+    </div>
 </footer>
 
 <a href="https://wa.me/5541991187943" target="_blank" class="whatsapp-fixo">💬</a>
 
 <script>
-    // Menu móvel
     const menuBtn = document.getElementById('menuBtn');
     const menuNav = document.getElementById('menuNav');
     menuBtn.addEventListener('click', () => {
         menuNav.classList.toggle('aberto');
     });
     
-    // Fechar menu ao clicar no link
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('.nav-links a, .item-icone, .footer-col a').forEach(link => {
         link.addEventListener('click', () => {
             menuNav.classList.remove('aberto');
         });
     });
     
-    // Instalação do App
     let deferredPrompt;
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
-        console.log('✅ App pode ser instalado!');
     });
 </script>
 
