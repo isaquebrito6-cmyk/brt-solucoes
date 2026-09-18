@@ -49,6 +49,14 @@
         .hero h1{font-size:2rem;line-height:1.3;margin-bottom:1.5rem}
         .hero h1 span{color:var(--dourado)}
         .hero p{font-size:1.1rem;margin-bottom:1rem;opacity:.95;max-width:550px;margin-left:auto;margin-right:auto}
+        
+        /* Ícones de Acesso Rápido */
+        .grid-acesso{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+        .item-acesso{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1.2rem;border-radius:16px;background:white;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:.3s;cursor:pointer;color:var(--texto)}
+        .item-acesso:hover{transform:translateY(-5px);background:rgba(255,255,255,.95)}
+        .item-acesso span:first-child{font-size:2.2rem}
+        .item-acesso span:last-child{font-size:.9rem;font-weight:700}
+        
         .aviso-orcamento{background:linear-gradient(135deg,#FFF8E1,#FFD95A);color:#854D0E;padding:1.3rem;border-radius:14px;font-weight:700;margin:2rem 0;box-shadow:0 4px 15px rgba(255,193,7,.25)}
         .botoes{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin:2rem 0}
         .btn{padding:1rem 2rem;border-radius:50px;font-weight:700;border:none;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:.5rem}
@@ -63,12 +71,6 @@
         .card-servico ul{margin-top:1rem}
         .card-servico li{list-style:none;padding:.5rem 0;border-bottom:1px dashed #eee}
         .card-servico li::before{content:'✓ ';color:green;font-weight:bold}
-        
-        .grid-icones{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2rem 0}
-        .item-icone{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1rem;border-radius:12px;background:white;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s;cursor:pointer}
-        .item-icone:hover{background:rgba(21,101,192,.05);transform:translateY(-3px)}
-        .item-icone span:first-child{font-size:1.8rem}
-        .item-icone span:last-child{font-size:.85rem;font-weight:600;color:var(--texto);text-align:center}
         
         .whatsapp-fixo{position:fixed;bottom:25px;right:20px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 15px rgba(37,211,102,.4);z-index:999;animation:pulse 2s infinite}
         @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}}
@@ -85,7 +87,7 @@
             .nav-links{position:fixed;top:0;right:-100%;height:100vh;width:280px;background:white;flex-direction:column;padding:4rem 2rem;box-shadow:-5px 0 20px rgba(0,0,0,.15);transition:.3s;align-items:flex-start}
             .nav-links.aberto{right:0}
             .hero h1{font-size:1.6rem}
-            .grid-icones{grid-template-columns:repeat(2,1fr)}
+            .grid-acesso{grid-template-columns:repeat(2,1fr)}
         }
     </style>
 </head>
@@ -109,9 +111,9 @@
         <ul class="nav-links" id="menuNav">
             <li><a href="#inicio">🏠 Início</a></li>
             <li><a href="#servicos">🔧 Serviços</a></li>
-            <li><a href="#diferencial">⭐ Diferencial</a></li>
-            <li><a href="#contato">📞 Contato</a></li>
-            <li><a href="#solicitar" class="btn-nav">📋 Orçamento</a></li>
+            <li><a href="#solicitar">📋 Cadastro</a></li>
+            <li><a href="#perfil">👤 Perfil</a></li>
+            <li><a href="https://wa.me/5541991187943" target="_blank" class="btn-nav">💬 WhatsApp</a></li>
         </ul>
     </div>
 </nav>
@@ -122,23 +124,23 @@
         <p>Elétrica • Hidráulica • Telhados Convencionais e de Vidro • Pergolado • Manutenção Predial</p>
         <p>Atendimento na Grande Curitiba com qualidade, garantia e transparência.</p>
         
-        <!-- 📱 ÍCONES RÁPIDOS NA PÁGINA INICIAL -->
-        <div class="grid-icones">
-            <a href="#eletrica" class="item-icone">
-                <span>⚡</span>
-                <span>Elétrica</span>
-            </a>
-            <a href="#hidraulica" class="item-icone">
-                <span>💧</span>
-                <span>Hidráulica</span>
-            </a>
-            <a href="#telhados" class="item-icone">
+        <!-- 🚪 ÍCONES DE ACESSO RÁPIDO -->
+        <div class="grid-acesso">
+            <a href="#inicio" class="item-acesso">
                 <span>🏠</span>
-                <span>Telhados</span>
+                <span>Acesso</span>
             </a>
-            <a href="#manutencao" class="item-icone">
+            <a href="#servicos" class="item-acesso">
                 <span>🔧</span>
-                <span>Manutenção</span>
+                <span>Serviço</span>
+            </a>
+            <a href="#solicitar" class="item-acesso">
+                <span>📋</span>
+                <span>Cadastro</span>
+            </a>
+            <a href="#perfil" class="item-acesso">
+                <span>👤</span>
+                <span>Perfil</span>
             </a>
         </div>
         
@@ -157,7 +159,7 @@
         <div class="linha"></div>
     </div>
     <div class="grid-servicos">
-        <div id="eletrica" class="card-servico">
+        <div class="card-servico">
             ⚡ <h3>Serviços Elétricos</h3>
             <ul>
                 <li>Troca de chuveiros, tomadas e interruptores</li>
@@ -166,7 +168,7 @@
                 <li>Conformidade com normas técnicas</li>
             </ul>
         </div>
-        <div id="hidraulica" class="card-servico">
+        <div class="card-servico">
             💧 <h3>Serviços Hidráulicos</h3>
             <ul>
                 <li>Reparo de vazamentos</li>
@@ -175,7 +177,7 @@
                 <li>Desentupimento e esgoto</li>
             </ul>
         </div>
-        <div id="telhados" class="card-servico">
+        <div class="card-servico">
             🏠 <h3>Telhados e Coberturas</h3>
             <ul>
                 <li>Construção e reforma de telhados</li>
@@ -185,7 +187,7 @@
                 <li>🌿 Pergolado — madeira ou alumínio</li>
             </ul>
         </div>
-        <div id="manutencao" class="card-servico">
+        <div class="card-servico">
             🔧 <h3>Manutenção Predial</h3>
             <ul>
                 <li>Manutenção preventiva e corretiva</li>
@@ -193,31 +195,6 @@
                 <li>Atendimento residencial e comercial</li>
                 <li>Soluções rápidas e duradouras</li>
             </ul>
-        </div>
-    </div>
-</section>
-
-<section id="diferencial">
-    <div class="titulo-secao">
-        <h2>Por que escolher a BRT Soluções?</h2>
-        <div class="linha"></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem">
-        <div style="background:white;padding:1.5rem;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.06)">
-            ✅ <strong>Orçamento Grátis</strong>
-            <p style="margin-top:.5rem;color:#666">Vamos até você e avaliamos sem custo</p>
-        </div>
-        <div style="background:white;padding:1.5rem;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.06)">
-            💰 <strong>Preço Justo</strong>
-            <p style="margin-top:.5rem;color:#666">Valor combinado sem surpresas</p>
-        </div>
-        <div style="background:white;padding:1.5rem;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.06)">
-            🛡️ <strong>Garantia</strong>
-            <p style="margin-top:.5rem;color:#666">Voltamos sem custo se precisar</p>
-        </div>
-        <div style="background:white;padding:1.5rem;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.06)">
-            ⚡ <strong>Agilidade</strong>
-            <p style="margin-top:.5rem;color:#666">Atendimento rápido, inclusive emergência</p>
         </div>
     </div>
 </section>
@@ -256,22 +233,38 @@
     </form>
 </section>
 
-<section id="contato">
+<section id="perfil">
     <div class="titulo-secao">
-        <h2>Contato & Atendimento</h2>
+        <h2>Perfil da Empresa</h2>
         <div class="linha"></div>
     </div>
-    <div style="text-align:center;max-width:600px;margin:0 auto">
-        <p style="font-size:1.2rem;margin-bottom:1rem"><strong>📍 Atendemos toda a Grande Curitiba:</strong></p>
-        <p>Curitiba • São José dos Pinhais • Pinhais • Colombo • Araucária • Fazenda Rio Grande</p>
-        <br>
-        <p style="font-size:1.1rem"><strong>📞 WhatsApp:</strong> <a href="tel:+5541991187943" style="color:var(--azul);font-weight:700">(41) 99118-7943</a></p>
-        <p><strong>✉️ E-mail:</strong> <a href="mailto:ipbisaque@gmail.com" style="color:var(--azul)">ipbisaque@gmail.com</a></p>
-        <p><strong>⏰ Horário:</strong> Seg-Sex 8h às 18h • Sáb 8h às 13h</p>
+    <div style="max-width:700px;margin:0 auto;text-align:center">
+        <p style="font-size:1.2rem;margin-bottom:1rem"><strong>BRT Soluções • Conserto Certo</strong></p>
+        <p style="margin-bottom:1rem">Somos uma empresa especializada em serviços de elétrica, hidráulica, telhados, coberturas de vidro, pergolado e manutenção predial. Atendemos a Grande Curitiba com qualidade, garantia e transparência.</p>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:2rem">
+            <div style="background:white;padding:1.5rem;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.06)">
+                ✅ <strong>Orçamento Grátis</strong>
+            </div>
+            <div style="background:white;padding:1.5rem;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.06)">
+                💰 <strong>Preço Justo</strong>
+            </div>
+            <div style="background:white;padding:1.5rem;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.06)">
+                🛡️ <strong>Garantia</strong>
+            </div>
+            <div style="background:white;padding:1.5rem;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.06)">
+                ⚡ <strong>Agilidade</strong>
+            </div>
+        </div>
+        
+        <div style="margin-top:2rem">
+            <p style="font-size:1.1rem"><strong>📞 WhatsApp:</strong> <a href="tel:+5541991187943" style="color:var(--azul);font-weight:700">(41) 99118-7943</a></p>
+            <p><strong>✉️ E-mail:</strong> <a href="mailto:ipbisaque@gmail.com" style="color:var(--azul)">ipbisaque@gmail.com</a></p>
+            <p><strong>⏰ Horário:</strong> Seg-Sex 8h às 18h • Sáb 8h às 13h</p>
+        </div>
     </div>
 </section>
 
-<!-- 🦶 RODAPÉ COMPLETO COM ÍCONES E LINKS -->
 <footer>
     <div class="footer-container">
         <div class="footer-col">
@@ -279,11 +272,11 @@
             <p>Qualidade, transparência e garantia em reparos e construção.</p>
         </div>
         <div class="footer-col">
-            <h4>🔧 Serviços</h4>
-            <a href="#eletrica">⚡ Elétrica</a>
-            <a href="#hidraulica">💧 Hidráulica</a>
-            <a href="#telhados">🏠 Telhados & Coberturas</a>
-            <a href="#manutencao">🔧 Manutenção Predial</a>
+            <h4>🔗 Acesso Rápido</h4>
+            <a href="#inicio">🏠 Acesso</a>
+            <a href="#servicos">🔧 Serviço</a>
+            <a href="#solicitar">📋 Cadastro</a>
+            <a href="#perfil">👤 Perfil</a>
         </div>
         <div class="footer-col">
             <h4>📞 Contato</h4>
@@ -310,7 +303,7 @@
         menuNav.classList.toggle('aberto');
     });
     
-    document.querySelectorAll('.nav-links a, .item-icone, .footer-col a').forEach(link => {
+    document.querySelectorAll('.nav-links a, .item-acesso, .footer-col a').forEach(link => {
         link.addEventListener('click', () => {
             menuNav.classList.remove('aberto');
         });
